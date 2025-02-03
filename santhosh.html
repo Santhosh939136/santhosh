@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>santhosh</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+
+    /* General Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .header {
+      background-color: #333;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .header nav ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+     
+    }
+
+    .header nav ul li {
+      margin-left: 20px;
+    }
+
+    .header nav ul li a {
+    
+      text-decoration: none;
+      font-size: 18px;
+      color: white;
+    }
+
+    /* Hamburger Menu Styles */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle .bar {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      margin: 4px 0;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      .header nav ul {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        height:50vh;
+        width: 100%;
+        background-color: #333;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in;
+        border-radius: 10px; 
+        box-shadow: 2px 2px 10px black;
+        text-shadow: 1px 1px 2px orangered;
+      }
+
+      .header nav ul.active {
+        transform: translateX(0px);
+      }
+
+      .header nav ul li {
+        margin: 20px 0;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+    }
+
+    /* Section Styles */
+    .section {
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .animate {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .animate.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .skill-list, .projects {
+  
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .skill-item, .project {
+      background-color: #f4f4f4;
+      padding: 20px;
+      border-radius: 8px;
+      width: 200px;
+      text-align: center;
+      color:black;
+    }
+
+    .footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="header">
+    <div class="logo">m santosh</div>
+    <nav>
+      <ul id="nav-links">
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="menu-toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </nav>
+  </header>
+
+  <!-- About Section -->
+  <section id="about" class="section">
+    <h1 class="animate">About Me</h1>
+    <p class="animate">I'm a passionate web developer with experience in creating interactive websites.</p>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="section">
+    <h1 class="animate">Skills</h1>
+    <div class="skill-list">
+      <div class="skill-item animate">HTML</div>
+      <div class="skill-item animate">CSS</div>
+      <div class="skill-item animate">JavaScript</div>
+      <div class="skill-item animate">React</div>
+      <div class="skill-item animate">Flutter</div>
+      <div class="skill-item animate">Dart</div>
+      <div class="skill-item animate">Java</div>
+      <div class="skill-item animate">PHP</div>
+      <div class="skill-item animate">C</div>
+      <div class="skill-item animate">C++</div>
+      <div class="skill-item animate">Bootstrap</div>
+      <div class="skill-item animate">MongoDB</div>
+      <div class="skill-item animate">MySQL</div>
+      <div class="skill-item animate">SQL</div>
+      <div class="skill-item animate">VS Code</div>
+      <div class="skill-item animate">Git</div>
+      <div class="skill-item animate">Notepad++</div>
+      <div class="skill-item animate">Eclipse</div>
+      <div class="skill-item animate">XAMPP</div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="section">
+    <h1 class="animate">Projects</h1>
+    <div class="projects">
+      <div class="project animate">
+        <h3>ISKCON</h3>
+        <p>I have made a static website which displays a brief about ISKCON.</p>
+      </div>
+      <div class="project animate">
+        <h3>Weather</h3>
+        <p>It is a dynamic website that shows real-time weather conditions.</p>
+      </div>
+      <div class="project animate">
+        <h3>CRUD</h3>
+        <p>It is a dynamic website that allows users to input data, view output, update, and delete data.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section">
+    <h1 class="animate">Contact Me</h1>
+    <p>Name: Santhosh</p>
+    <p>Phone: 9391364569</p>
+    <p>Email: chavanasanthosh369@gmail.com and chavansanthosh963@gmail.com</p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 m santosh</p>
+  </footer>
+
+  <script>
+    // JavaScript for Hamburger Menu Toggle
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navLinks = document.getElementById('nav-links');
+
+    mobileMenu.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    // JavaScript for Animations on Scroll
+    const animateElements = document.querySelectorAll('.animate');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    });
+
+    animateElements.forEach((element) => {
+      observer.observe(element);
+    });
+  </script>
+</body>
+</html>
+  
