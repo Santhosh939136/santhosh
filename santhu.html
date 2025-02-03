@@ -5,6 +5,127 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>santhosh</title>
   <link rel="stylesheet" href="styles.css">
+  <style>
+    /* General Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .header {
+      background-color: #333;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .header nav ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+
+    .header nav ul li {
+      margin-left: 20px;
+    }
+
+    .header nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    /* Hamburger Menu Styles */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle .bar {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      margin: 4px 0;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      .header nav ul {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        height: 100vh;
+        width: 100%;
+        background-color: #333;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in;
+      }
+
+      .header nav ul.active {
+        transform: translateX(0);
+      }
+
+      .header nav ul li {
+        margin: 20px 0;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+    }
+
+    /* Section Styles */
+    .section {
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .animate {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .animate.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .skill-list, .projects {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .skill-item, .project {
+      background-color: #f4f4f4;
+      padding: 20px;
+      border-radius: 8px;
+      width: 200px;
+      text-align: center;
+    }
+
+    .footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
 </head>
 <body>
 
@@ -12,12 +133,17 @@
   <header class="header">
     <div class="logo">m santosh</div>
     <nav>
-      <ul>
+      <ul id="nav-links">
         <li><a href="#about">About Me</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
+      <div class="menu-toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
     </nav>
   </header>
 
@@ -35,22 +161,21 @@
       <div class="skill-item animate">CSS</div>
       <div class="skill-item animate">JavaScript</div>
       <div class="skill-item animate">React</div>
-      <div class="skill-item animate">flutter</div>
-      <div class="skill-item animate">dart</div>
-      <div class="skill-item animate">java</div>
-      <div class="skill-item animate">php</div>
-      <div class="skill-item animate">c</div>
-      <div class="skill-item animate">c++</div>
-      <div class="skill-item animate">boostrap</div>
-      <div class="skill-item animate">mongodb</div>
-      <div class="skill-item animate">mysql</div>
-      <div class="skill-item animate">sql</div>
-      <div class="skill-item animate">vs code</div>
-      <div class="skill-item animate">git</div>
-      <div class="skill-item animate">edit++</div>
-      <div class="skill-item animate">eclipse</div>
-      <div class="skill-item animate">xammp </div>
-      
+      <div class="skill-item animate">Flutter</div>
+      <div class="skill-item animate">Dart</div>
+      <div class="skill-item animate">Java</div>
+      <div class="skill-item animate">PHP</div>
+      <div class="skill-item animate">C</div>
+      <div class="skill-item animate">C++</div>
+      <div class="skill-item animate">Bootstrap</div>
+      <div class="skill-item animate">MongoDB</div>
+      <div class="skill-item animate">MySQL</div>
+      <div class="skill-item animate">SQL</div>
+      <div class="skill-item animate">VS Code</div>
+      <div class="skill-item animate">Git</div>
+      <div class="skill-item animate">Notepad++</div>
+      <div class="skill-item animate">Eclipse</div>
+      <div class="skill-item animate">XAMPP</div>
     </div>
   </section>
 
@@ -59,16 +184,16 @@
     <h1 class="animate">Projects</h1>
     <div class="projects">
       <div class="project animate">
-        <h3>isckon</h3>
-        <p>i have made an static web site which desplays brief about isckon</p>
+        <h3>ISKCON</h3>
+        <p>I have made a static website which displays a brief about ISKCON.</p>
       </div>
       <div class="project animate">
-        <h3>weather</h3>
-        <p>it is an dynamic website which will show the real time weahter conidtion </p>
+        <h3>Weather</h3>
+        <p>It is a dynamic website that shows real-time weather conditions.</p>
       </div>
       <div class="project animate">
-        <h3>crud</h3>
-        <p>it is an dynamic website which will able to take the input from the user and he can able to show output and can update the data and delete it if not nessecery</p>
+        <h3>CRUD</h3>
+        <p>It is a dynamic website that allows users to input data, view output, update, and delete data.</p>
       </div>
     </div>
   </section>
@@ -76,9 +201,9 @@
   <!-- Contact Section -->
   <section id="contact" class="section">
     <h1 class="animate">Contact Me</h1>
- <p> name : santhosh </p>
-<p>phone :9391364569</p>
-  <p> email : chavanasanthosh369@gmail.com and chavansanthosh963@gmail.com</p>
+    <p>Name: Santhosh</p>
+    <p>Phone: 9391364569</p>
+    <p>Email: chavanasanthosh369@gmail.com and chavansanthosh963@gmail.com</p>
   </section>
 
   <!-- Footer -->
@@ -86,6 +211,29 @@
     <p>&copy; 2025 m santosh</p>
   </footer>
 
-  <script src="scripts.js"></script>
+  <script>
+    // JavaScript for Hamburger Menu Toggle
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navLinks = document.getElementById('nav-links');
+
+    mobileMenu.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    // JavaScript for Animations on Scroll
+    const animateElements = document.querySelectorAll('.animate');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    });
+
+    animateElements.forEach((element) => {
+      observer.observe(element);
+    });
+  </script>
 </body>
 </html>
